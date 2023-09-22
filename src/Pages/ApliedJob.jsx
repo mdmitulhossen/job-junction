@@ -13,13 +13,14 @@ const ApliedJob = () => {
 
     const handleRemoveAppliedDetails = (id) => {
         
-        // const appliedJob = JSON.parse(localStorage.getItem('appliedJobId'));
-        console.log("click",appliedJob,id)
         const newAppliedJob = appliedJob?.filter(j => j.id !== parseInt(id))
-        console.log("click",newAppliedJob)
+
         localStorage.removeItem('appliedJobId')
+
         localStorage.setItem('appliedJobId', JSON.stringify(newAppliedJob))
+
         toast.success('Successfully Removed')
+        
         setAppliedJob(newAppliedJob)
     }
 
