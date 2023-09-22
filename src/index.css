@@ -6,4 +6,7 @@
   .btnJob {
     @apply py-2 px-4 bg-gradient-to-r from-indigo-500 to-blue-500 text-white hover:bg-gradient-to-t hover:from-blue-500 hover:to-indigo-400 duration-500 font-semibold rounded;
   }
+  .containerJob{
+    @apply max-w-[1920px] mx-auto xl:px-[160px] lg:px-[100px] md:px-[60px] px-8;
+  }
 }

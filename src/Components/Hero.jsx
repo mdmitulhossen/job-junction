@@ -3,9 +3,9 @@ import heroImage from '../assets/images/user.png'
 
 const Hero = () => {
     return (
-        <div className='h-[600px] flex items-end justify-end align-items-end'>
-                <div className='flex  items-center justify-between'>
-                    <div className='space-y-4 w-1/2'>
+        <div className='h-[600px] flex md:items-end md:justify-end md:align-items-end'>
+                <div className='flex  items-center justify-center md:justify-between'>
+                    <div className='space-y-4 w-[90%] md:w-1/2 text-center md:text-left'>
                         <h1 className='xl:text-6xl text-5xl font-bold'>
                             One Step <br /> Closer To Your <br /> <span className='bg-gradient-to-r from-indigo-500 to-blue-500 text-transparent bg-clip-text'>Dream Job</span>
                         </h1>
@@ -16,7 +16,7 @@ const Hero = () => {
                             Get Start
                         </button>
                     </div>
-                    <div className='w-1/2 h-[530px] flex justify-end'>
+                    <div className='w-1/2 h-[530px] hidden md:flex  justify-end'>
                         <img className='w-full h-auto ml-0' src={heroImage} alt="" />
                     </div>
                 </div>

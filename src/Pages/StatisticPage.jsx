@@ -2,14 +2,17 @@ import React, { useEffect } from 'react';
 import ComponentHeader from '../Components/ComponentHeader';
 import Hero from '../Components/Hero';
 import CategoryCard from '../Components/CategoryCard';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import FeatureCard from '../Components/FeatureCard';
 
 const StatisticPage = () => {
+    const navigate = useNavigate();
     const { category,jobs } = useLoaderData();
     console.log("FromLoder", category,jobs)
 
-
+const handleViewAll=()=>{
+    navigate('/jobs')
+}
 
     return (
         <div>
@@ -40,7 +43,9 @@ const StatisticPage = () => {
                 <div className='mt-16 mb-8'>
                     <ComponentHeader title="Featured Jobs" />
                 </div>
-                {/* Feature Card */}
+
+
+                {/* Feature section */}
                 <div className='mb-10 grid md:grid-cols-2 grid-cols-1 gap-4'>
                     {
                         jobs.slice(0,4).map(j=> <FeatureCard key={j.id} title={j.job_title} company_name={j.company_name} logo={j.logo} location={j.location} remote_or_onsite={j.remote_or_onsite} job_type={j.job_type} salary={j.salary} />)
@@ -48,7 +53,7 @@ const StatisticPage = () => {
                 </div>
 
                 <div className='flex justify-center mb-16'>
-                    <button className='btnJob'>View All</button>
+                    <button onClick={handleViewAll} className='btnJob'>View All</button>
                 </div>
             </div>
 

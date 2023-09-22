@@ -5,6 +5,7 @@ import StatisticPage from "../Pages/StatisticPage";
 import ApliedJob from "../Pages/ApliedJob";
 import Blogs from "../Pages/Blogs";
 import { statisticsLoader } from "../Utilitis/fatchData";
+import AllJobs from "../Pages/AllJobs";
 
 const router = createBrowserRouter([
     {
@@ -18,13 +19,18 @@ const router = createBrowserRouter([
                 loader:statisticsLoader
             },
             {
-                path: "/jobs",
+                path: "/applidJobs",
                 element: <ApliedJob/>
+            },
+            {
+                path: "/jobs",
+                element: <AllJobs/>,
+                loader:statisticsLoader
             },
             {
                 path: "/blogs",
                 element: <Blogs/>
-            }
+            },
         ]
     }
 ]);

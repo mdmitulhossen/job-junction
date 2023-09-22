@@ -14,7 +14,7 @@ const FeatureCard = ({title,company_name,logo,location,remote_or_onsite,job_type
                     <p className="font-semibold border-2 border-blue-300 text-blue-600 px-2  rounded-md">{remote_or_onsite}</p>
                     <p className="font-semibold border-2 border-blue-300 text-blue-600 px-2  rounded-md">{job_type}</p>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
                     <span className="flex gap-1"><img src={locationIcon} alt="" /><span>{location}</span></span>
                     <span className="flex gap-1"><img src={doller} alt="" /><span>Salary : {salary}</span></span>
                 </div>

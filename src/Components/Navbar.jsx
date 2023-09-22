@@ -36,7 +36,7 @@ const Navbar = () => {
                             </li>
                             <li>
                                 <NavLink
-                                    to="/jobs"
+                                    to="/applidJobs"
                                     className={({ isActive }) => {
                                         return isActive ? "block py-2 px-3 text-sm bg-blue-700 rounded font-semibold  text-white"
                                             :
