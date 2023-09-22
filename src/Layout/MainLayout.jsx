@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import Hero from "../Components/Hero";
 
 const MainLayout = () => {
     return (
@@ -8,8 +9,8 @@ const MainLayout = () => {
             {/* Navbar */}
             <Navbar />
 
-
-            <div className="max-w-[1920px] mx-auto md:px-[160px] px-8">
+            
+            <div >
                 <Outlet />
             </div>
 

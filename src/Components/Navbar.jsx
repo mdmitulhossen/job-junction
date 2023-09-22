@@ -3,9 +3,9 @@ import {Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <div className='relative max-w-[1920px] mx-auto md:px-[160px]'>
-            <nav className="bg-transparent dark:bg-gray-900 w-full z-20">
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
+        <div className=' max-w-[1920px] bg-transparent dark:bg-gray-900  mx-auto xl:px-[160px] lg:px-[130px] md:px-[100px] px-8 absolute top-0 left-0 right-0'>
+            <nav className=" w-full z-20">
+                <div className=" flex flex-wrap items-center justify-between mx-auto py-4">
                     <Link to="/" className="flex items-center">
                         {/* <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="Flowbite Logo"/> */}
                         <span className="text-2xl font-bold whitespace-nowrap dark:text-white">JobJunction</span>
@@ -19,8 +19,8 @@ const Navbar = () => {
                             </svg>
                         </button>
                     </div>
-                    <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-                        <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <div className="items-center bg-gray-200 md:bg-transparent justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                        <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium  md:flex-row md:justify-between lg:gap-5 xl:gap-8 md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                             <li>
                                 <NavLink
                                     to="/"
