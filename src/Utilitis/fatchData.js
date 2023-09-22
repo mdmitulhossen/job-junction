@@ -14,16 +14,26 @@ export const fetchData = async (url) => {
 
 
 export const statisticsLoader = async () => {
-    const category = await fetchData('../../public/categories.json');
-    const jobs = await fetchData('../../public/jobs.json');
+    const category = await fetchData('/categories.json');
+    const jobs = await fetchData('/jobs.json');
     const data = {
         category: category,
         jobs: jobs
     }
     return data;
 }
+
+
 export const detailsLoader = async ({params}) => {
-  const jobs = await fetchData('../../public/jobs.json');
+  const jobs = await fetchData('/jobs.json');
   const job = jobs.find((job) => job.id === parseInt(params.id));
     return job;
+}
+
+
+export const appliedJobLoader = async () => {
+    const applied = JSON.parse(window.localStorage.getItem('appliedJobId'));
+     const jobs = await fetchData('/jobs.json');
+     const appliedJobs = jobs.filter((job) => applied.includes(job.id));
+    return appliedJobs;
 }

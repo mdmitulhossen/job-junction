@@ -5,18 +5,53 @@ import iconEmail from '../assets/icons/email.png'
 import iconLocation from '../assets/icons/location2.png'
 import iconCalender from '../assets/icons/calendar.png'
 import { useLoaderData } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
+import { useEffect, useState } from 'react';
 
 const JobDetails = () => {
-    const { job_description, educational_requirements, experiences, job_responsibility, job_title, salary, contact_information } = useLoaderData();
+    const [applyBtn, setApplyBtn] = useState(true)
+    const { job_description, educational_requirements, experiences, job_responsibility, job_title, salary, contact_information, id } = useLoaderData();
     console.log(job_description)
+
+
+    useEffect(() => {
+        const appliedJob = JSON.parse(localStorage.getItem('appliedJobId'))
+        const duplicate = appliedJob?.find(j => j === id)
+        if (duplicate) {
+            setApplyBtn(false)
+        }
+    }, [])
+
+    const handleApply = () => {
+        const applied = JSON.parse(localStorage.getItem('appliedJobId'))
+        const d = applied?.find(j=>j===id)
+        console.log(d)
+        if (d) {
+            setApplyBtn(false)
+            toast.error('Already Applied')
+            return
+        }
+        else if (applied) {
+            localStorage.setItem('appliedJobId', JSON.stringify([...applied, id]))
+            setApplyBtn(false)
+        }
+        else {
+            localStorage.setItem('appliedJobId', JSON.stringify([id]))
+            setApplyBtn(false)
+        }
+
+        toast.success('Successfully Applied')
+    }
+
+
     return (
         <div>
             <div className="">
                 <BreadCrumb path="Job Details" />
             </div>
 
-            <div className='my-16 containerJob flex gap-10'>
-                <div className='space-y-4 w-2/3'>
+            <div className='my-16 containerJob grid grid-flow-col-1 md:grid-cols-2 gap-10'>
+                <div className='space-y-4 w-full'>
                     <p className='font-semibold text-[#757575]'>
                         <span className='text-black font-bold'>Job Description:</span>
                         {job_description}
@@ -34,7 +69,7 @@ const JobDetails = () => {
                 </div>
 
 
-                <div className='w-1/3'>
+                <div className='w-full'>
                     <div className='p-7 bg-blue-200 space-y-4 rounded-md'>
                         <h1 className='font-bold text-xl'>Job Details</h1>
                         <hr />
@@ -79,11 +114,18 @@ const JobDetails = () => {
 
 
                     </div>
-                    <button className='btnJob w-full mt-4'>
-                        Apply Now
-                    </button>
+                    {
+                        applyBtn && <button onClick={handleApply} className='btnJob w-full mt-4'>
+                            Apply Now
+                        </button>
+                    }
                 </div>
             </div>
+
+            <Toaster
+                position="top-right"
+                reverseOrder={false}
+            />
         </div>
     );
 };

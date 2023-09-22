@@ -4,7 +4,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import StatisticPage from "../Pages/StatisticPage";
 import ApliedJob from "../Pages/ApliedJob";
 import Blogs from "../Pages/Blogs";
-import { detailsLoader, statisticsLoader } from "../Utilitis/fatchData";
+import { appliedJobLoader, detailsLoader, statisticsLoader } from "../Utilitis/fatchData";
 import AllJobs from "../Pages/AllJobs";
 import JobDetails from "../Pages/JobDetails";
 
@@ -21,7 +21,8 @@ const router = createBrowserRouter([
             },
             {
                 path: "/applidJobs",
-                element: <ApliedJob/>
+                element: <ApliedJob/>,
+                loader:appliedJobLoader
             },
             {
                 path: "/jobs",
