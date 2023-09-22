@@ -12,12 +12,12 @@ const Hero = () => {
                         <p className='text-[#757575]'>
                             Explore thousands of job opportunities with all the information you need. Its your future. Come find it. Manage all your job application from start to finish.
                         </p>
-                        <button className='py-2 px-4 bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-semibold rounded'>
+                        <button className='btnJob'>
                             Get Start
                         </button>
                     </div>
                     <div className='w-1/2 h-[530px] flex justify-end'>
-                        <img className='w-full h-auto ml-40' src={heroImage} alt="" />
+                        <img className='w-full h-auto ml-0' src={heroImage} alt="" />
                     </div>
                 </div>
         </div>
