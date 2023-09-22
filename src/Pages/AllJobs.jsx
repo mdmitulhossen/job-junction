@@ -43,7 +43,7 @@ const AllJobs = () => {
 
             <div className="containerJob mt-16">
                 {/* Filter */}
-                <div className="flex justify-end mb-6">
+                <div className="flex justify-center md:justify-end mb-6">
                     <select onChange={handleFilter} id="countries" className="bg-gray-200 cursor-pointer w-[200px] border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         <option selected disabled>Filter By</option>
                         <option value="ALL">ALL</option>
@@ -56,7 +56,7 @@ const AllJobs = () => {
                 {/* Feature section */}
                 <div className='mb-16 mt-2 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4'>
                     {
-                        filterData?.map(j => <FeatureCard key={j.id} title={j.job_title} company_name={j.company_name} logo={j.logo} location={j.location} remote_or_onsite={j.remote_or_onsite} job_type={j.job_type} salary={j.salary} />)
+                        filterData?.map(j => <FeatureCard key={j.id} id={j.id} title={j.job_title} company_name={j.company_name} logo={j.logo} location={j.location} remote_or_onsite={j.remote_or_onsite} job_type={j.job_type} salary={j.salary} />)
                     }
                 </div>
             </div>

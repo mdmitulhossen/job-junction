@@ -1,7 +1,12 @@
 import test from "../assets/logo/google.png"
 import locationIcon from "../assets/icons/Location.png"
 import doller from "../assets/icons/money.png"
-const FeatureCard = ({title,company_name,logo,location,remote_or_onsite,job_type,salary}) => {
+import { useNavigate } from "react-router-dom";
+const FeatureCard = ({id,title,company_name,logo,location,remote_or_onsite,job_type,salary}) => {
+    const navigate = useNavigate();
+     const handleViewDetails = (id) => {
+        navigate(`/job/${id}`)
+     }
     return (
         <div className="w-full p-10 border border-[#E8E8E8] rounded-md">
             <div className="space-y-3">
@@ -19,7 +24,7 @@ const FeatureCard = ({title,company_name,logo,location,remote_or_onsite,job_type
                     <span className="flex gap-1"><img src={doller} alt="" /><span>Salary : {salary}</span></span>
                 </div>
 
-                <button className="btnJob ">View Details</button>
+                <button onClick={()=>handleViewDetails(id)} className="btnJob">View Details</button>
             </div>
         </div>
     );

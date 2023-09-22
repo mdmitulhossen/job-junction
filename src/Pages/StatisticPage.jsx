@@ -48,7 +48,7 @@ const handleViewAll=()=>{
                 {/* Feature section */}
                 <div className='mb-10 grid md:grid-cols-2 grid-cols-1 gap-4'>
                     {
-                        jobs.slice(0,4).map(j=> <FeatureCard key={j.id} title={j.job_title} company_name={j.company_name} logo={j.logo} location={j.location} remote_or_onsite={j.remote_or_onsite} job_type={j.job_type} salary={j.salary} />)
+                        jobs.slice(0,4).map(j=> <FeatureCard key={j.id} id={j.id} title={j.job_title} company_name={j.company_name} logo={j.logo} location={j.location} remote_or_onsite={j.remote_or_onsite} job_type={j.job_type} salary={j.salary} />)
                     }
                 </div>
 
