@@ -4,6 +4,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import StatisticPage from "../Pages/StatisticPage";
 import ApliedJob from "../Pages/ApliedJob";
 import Blogs from "../Pages/Blogs";
+import { statisticsLoader } from "../Utilitis/fatchData";
 
 const router = createBrowserRouter([
     {
@@ -13,7 +14,8 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <StatisticPage/>
+                element: <StatisticPage/>,
+                loader:statisticsLoader
             },
             {
                 path: "/jobs",
