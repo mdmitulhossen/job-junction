@@ -30,7 +30,8 @@ const ApliedJob = () => {
 
             <div className='my-16 containerJob space-y-8'>
                 {
-
+                    appliedJob?.length === 0 ? <h1 className='text-center text-3xl font-bold my-16'>No Applied Job</h1>
+                    :
                     appliedJob?.map(j => <ApliedJobCard key={j.id} id={j.id} title={j.job_title} company_name={j.company_name} logo={j.logo} location={j.location} remote_or_onsite={j.remote_or_onsite} job_type={j.job_type} salary={j.salary} handleRemoveAppliedDetails={handleRemoveAppliedDetails}/>)
                 }
             </div>

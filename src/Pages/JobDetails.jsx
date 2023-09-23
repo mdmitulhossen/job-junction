@@ -4,13 +4,14 @@ import iconPhone from '../assets/icons/phone.png'
 import iconEmail from '../assets/icons/email.png'
 import iconLocation from '../assets/icons/location2.png'
 import iconCalender from '../assets/icons/calendar.png'
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { useEffect, useState } from 'react';
 
 const JobDetails = () => {
     const [applyBtn, setApplyBtn] = useState(true)
     const { job_description, educational_requirements, experiences, job_responsibility, job_title, salary, contact_information, id } = useLoaderData();
+    const navigate = useNavigate();
     console.log(job_description)
 
 
@@ -43,6 +44,9 @@ const JobDetails = () => {
         toast.success('Successfully Applied')
     }
 
+    const handleAppliedJob = () => {    
+        navigate("/applidJobs")
+    }
 
     return (
         <div>
@@ -115,8 +119,10 @@ const JobDetails = () => {
 
                     </div>
                     {
-                        applyBtn && <button onClick={handleApply} className='btnJob w-full mt-4'>
-                            Apply Now
+                        applyBtn ? <button onClick={handleApply} className='btnJob w-full mt-4'>Apply Now
+                        </button>
+                        :
+                        <button onClick={handleAppliedJob} className='btnJob w-full mt-4'>Applied Jobs
                         </button>
                     }
                 </div>

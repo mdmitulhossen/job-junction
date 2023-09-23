@@ -13,8 +13,8 @@ const ApliedJobCard = ({id,title,company_name,logo,location,remote_or_onsite,job
  
     return (
         <div>
-            <div className='p-7 border rounded-md flex justify-between '>
-                <div className='flex gap-6' >
+            <div className='p-7 border rounded-md flex justify-between flex-wrap gap-4'>
+                <div className='flex gap-6 flex-wrap' >
                     <div className='bg-gray-200  p-4 flex items-center rounded-md'>
                         <img className='w-[200px]' src={logo} alt="" />
                     </div>
