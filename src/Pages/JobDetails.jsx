@@ -4,15 +4,20 @@ import iconPhone from '../assets/icons/phone.png'
 import iconEmail from '../assets/icons/email.png'
 import iconLocation from '../assets/icons/location2.png'
 import iconCalender from '../assets/icons/calendar.png'
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { useEffect, useState } from 'react';
 
 const JobDetails = () => {
+    const {pathname}=useLocation()
     const [applyBtn, setApplyBtn] = useState(true)
     const { job_description, educational_requirements, experiences, job_responsibility, job_title, salary, contact_information, id } = useLoaderData();
     const navigate = useNavigate();
     console.log(job_description)
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [pathname])
 
 
     useEffect(() => {

@@ -1,11 +1,11 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation } from "react-router-dom";
 import BreadCrumb from "../Components/BreadCrumb";
 import FeatureCard from "../Components/FeatureCard";
 import { useEffect, useState } from "react";
 
 
 const AllJobs = () => {
-
+    const {pathname}=useLocation()
     const [filterData, setFilterData] = useState([]);
     const { jobs } = useLoaderData();
     console.log(jobs)
@@ -13,6 +13,10 @@ const AllJobs = () => {
     useEffect(() => {
         setFilterData(jobs)
     }, [])
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [pathname])
 
 
     const handleFilter = (e) => {
